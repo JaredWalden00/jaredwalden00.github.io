@@ -7,6 +7,10 @@
     <title>Portfolio</title>
     <base href="/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="Portfolio.styles.css" rel="stylesheet" />
@@ -27,6 +31,50 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        // Smooth scroll to element
+        window.scrollToElementById = function (id) {
+            return new Promise(function (resolve) {
+                var maxAttempts = 100;
+                var attempts = 0;
+                function tryScroll() {
+                    var el = document.getElementById(id);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        resolve(true);
+                    } else if (++attempts > maxAttempts) {
+                        resolve(false);
+                    } else {
+                        setTimeout(tryScroll, 50);
+                    }
+                }
+                tryScroll();
+            });
+        };
+
+        // Scroll-triggered fade-in animations
+        window.initScrollAnimations = function () {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('.fade-up').forEach(function (el) {
+                observer.observe(el);
+            });
+        };
+
+        // Re-init on Blazor navigation
+        Blazor.addEventListener('enhancedload', function () {
+            window.initScrollAnimations();
+        });
+    </script>
 </body>
 
 </html>
