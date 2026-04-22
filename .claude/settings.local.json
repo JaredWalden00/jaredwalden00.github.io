@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"^[A-Z][a-zA-Z ]{5,60}$\")"
+    ]
+  }
+}
