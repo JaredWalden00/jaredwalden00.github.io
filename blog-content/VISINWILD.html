@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Interface in the Wild — Ultimate Frame Data</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --border: #dbe3ee;
+      --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #eef3ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 750px;
+    }
+
+    .source {
+      margin-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .source a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.55rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .image-block {
+      margin-top: 20px;
+    }
+
+    .image-block img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .two-up {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .note {
+      background: #eff6ff;
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: #1e3a8a;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .hero,
+      .section {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="eyebrow">Visual Interface in the Wild</div>
+      <h1>Ultimate Frame Data</h1>
+      <p class="subtitle">
+        For this Visual Interface in the Wild analysis, I chose <strong>Ultimate Frame Data</strong>, a tool widely used by competitive Super Smash Bros. Ultimate players. The site is designed to make complex gameplay information easy to access, helping players quickly understand character moves, timing, and matchup details.
+      </p>
+      <p class="source">
+        Source: <a href="https://ultimateframedata.com/smash" target="_blank" rel="noopener noreferrer">ultimateframedata.com/smash</a>
+      </p>
+    </header>
+
+    <section class="section">
+      <h2>First Impression and Overall Layout</h2>
+      <p>
+        One of the strongest parts of this interface is how approachable it feels, even though it contains highly technical information. The homepage presents the full cast of characters in a clean, organized layout, so users can immediately find the character they want without having to search through confusing menus.
+      </p>
+      <p>
+        This makes the site effective for both experienced competitors and newer players. At a glance, the design communicates that the site is built for quick access and repeated use, which is especially important in a competitive setting where players often want information fast.
+      </p>
+
+      <div class="image-block">
+        <img src="/image1.png" alt="Ultimate Frame Data homepage showing the character select layout" />
+        <div class="caption">The homepage organizes the cast in a simple visual layout, making character selection fast and intuitive.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How the Character Pages Communicate Information</h2>
+      <p>
+        After selecting a character, the interface shifts from broad navigation to detailed analysis. Each move is shown with an animated GIF, which is much more effective than text alone because it lets the user immediately connect the numbers to the actual motion of the attack.
+      </p>
+      <p>
+        The site also displays technical details such as startup frames, active frames, and other timing values. This helps players understand not just <em>what</em> a move looks like, but <em>when</em> it becomes dangerous or punishable during a match.
+      </p>
+      <p>
+        A particularly useful visual element is the red hitbox overlay. This gives players a much clearer sense of a move’s range by showing where the attack can connect. Instead of forcing users to imagine invisible collision zones, the interface makes that information visible and easy to interpret.
+      </p>
+
+      <div class="two-up">
+        <div class="image-block">
+          <img src="/image4.png" alt="Character data page in Ultimate Frame Data" />
+          <div class="caption">The character page balances animation, stats, and structure without feeling cluttered.</div>
+        </div>
+        <div class="image-block">
+          <img src="/image2.png" alt="Move list with hitbox and frame data details" />
+          <div class="caption">Move-by-move data combines animated examples with precise timing information.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Interactive Depth and Why It Matters</h2>
+      <p>
+        The interface becomes even more useful when a user clicks on an individual move. Doing this opens a more detailed frame-by-frame view of the animation, allowing the user to step through the move and closely examine what happens at each moment.
+      </p>
+      <p>
+        This level of interaction is valuable because competitive matches can be decided by extremely small timing differences. Being able to pause, move forward, and move backward frame by frame gives players a more exact understanding of when a move begins, when it can hit, and when it can be challenged.
+      </p>
+      <div class="note">
+        In competitive Smash, even a one-frame difference can matter. This interface supports that level of precision without making the experience feel overwhelming.
+      </div>
+
+      <div class="image-block">
+        <img src="/image3.png" alt="Frame-by-frame move viewer in Ultimate Frame Data" />
+        <div class="caption">The frame viewer lets users inspect an attack moment by moment, turning technical data into something practical and learnable.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why This Interface Works Well</h2>
+      <p>
+        Ultimate Frame Data succeeds because it translates advanced competitive information into a format that is visual, organized, and interactive. Instead of relying only on numbers or dense explanations, it combines animation, layout, and direct manipulation to help users understand the meaning behind the data.
+      </p>
+      <p>
+        Overall, this is a strong example of a real-world visual interface because it is designed around the needs of its audience. Competitive players need quick access, accuracy, and clarity, and this interface delivers all three in a way that feels efficient and easy to use.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

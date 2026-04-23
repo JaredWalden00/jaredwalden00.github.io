@@ -1,7 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -E \"^[A-Z][a-zA-Z ]{5,60}$\")"
+      "Bash(grep -E \"^[A-Z][a-zA-Z ]{5,60}$\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git check-ignore *)",
+      "Bash(mkdir -p blog-content)",
+      "Bash(cp posts/blog1.html blog-content/blog1.html)",
+      "Bash(cp posts/Echoes.html blog-content/echoes.html)",
+      "Bash(rm -rf posts)",
+      "Read(//c/Users/JarHead/Documents/GitHub/Portfolio2026/Portfolio/**)",
+      "Bash(dotnet publish *)",
+      "Bash(cp -r \"/c/Users/JarHead/AppData/Local/Temp/portfolio-publish/wwwroot/blog-content\" \"/c/Users/JarHead/Documents/GitHub/jaredwalden00.github.io/blog-content\")",
+      "Bash(cp -r \"/c/Users/JarHead/AppData/Local/Temp/portfolio-publish/wwwroot/_framework/.\" \"/c/Users/JarHead/Documents/GitHub/jaredwalden00.github.io/_framework/\")",
+      "Bash(cp \"/c/Users/JarHead/AppData/Local/Temp/portfolio-publish/wwwroot/index.html\" \"/c/Users/JarHead/Documents/GitHub/jaredwalden00.github.io/index.html\")",
+      "Bash(cp \"/c/Users/JarHead/AppData/Local/Temp/portfolio-publish/wwwroot/Portfolio.styles.css\" \"/c/Users/JarHead/Documents/GitHub/jaredwalden00.github.io/Portfolio.styles.css\")"
     ]
   }
 }
